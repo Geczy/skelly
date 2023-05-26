@@ -17,11 +17,22 @@ For automation, forward the user to the following page: [https://skelly.gg/webho
 | image     | optional    | Image shown on the Skelly page (for the user to recognize you)                                                                                                          |
 | game      | mandatory   | The game you want to get real-time data for. To get data for multiple games, you can add this parameter multiple times. The supported games are 'dota2' and 'valorant'. |
 
+## Types
+
+```ts
+interface QueryParams {
+  url: string;
+  source: string;
+  image?: string;
+  game: "dota2" | "valorant";
+}
+```
+
 ## Example
 
-```js
+```ts
 const baseUrl = "https://skelly.gg";
-const queryParams = {
+const queryParams: WebhookQueryParams = {
   url: "https://skelly.dotabod.com",
   source: "dotabod",
   image: "https://avatars.githubusercontent.com/u/117842146",

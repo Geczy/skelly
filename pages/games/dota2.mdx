@@ -4,7 +4,27 @@ title: Dota 2
 
 # Dota 2
 
-...
+## Types
+
+```ts
+export interface IDota2Webhook {
+  mmr?: number;
+  confidence?: number;
+  gameMode?: "NONE" | "GameMode_AllPick" | "GameMode_Turbo";
+  lobbyType?: string;
+  gameState?: "playing" | "idle" | "spectating";
+  players?: {
+    steamId: string;
+    accountId: string;
+    name: string;
+    hero: string;
+    team: 2 | 3;
+    role: 0 | 1 | 2 | 4 | 8 | 16 | "other";
+    team_slot: 0 | 1 | 2 | 3 | 4;
+    player_index: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+  }[];
+}
+```
 
 ## Overview
 
