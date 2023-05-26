@@ -1,0 +1,37 @@
+---
+title: Adding Webhooks
+---
+
+# Adding webhooks
+
+The user can either **manually add** a webhook to their settings or you can forward them to a Skelly page to **automatically add** a webhook.
+
+For automation, forward the user to the following page: [https://skelly.gg/webhook](https://skelly.gg/webhook)
+
+## Query Parameters
+
+| Parameter | Requirement | Description                                                                                                                                                             |
+| --------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| url       | mandatory   | Your webhook URL                                                                                                                                                        |
+| source    | mandatory   | Identify who you are (for the user to recognize you)                                                                                                                    |
+| image     | optional    | Image shown on the Skelly page (for the user to recognize you)                                                                                                          |
+| game      | mandatory   | The game you want to get real-time data for. To get data for multiple games, you can add this parameter multiple times. The supported games are 'dota2' and 'valorant'. |
+
+## Example
+
+```js
+const baseUrl = "https://skelly.gg";
+const queryParams = {
+  url: "https://skelly.dotabod.com",
+  source: "dotabod",
+  image: "https://avatars.githubusercontent.com/u/117842146",
+  game: "dota2",
+};
+
+const urlParams = new URLSearchParams(queryParams);
+const url = `${baseUrl}?${urlParams.toString()}`;
+
+console.log(url);
+
+// https://skelly.gg?url=https%3A%2F%2Fskelly.dotabod.com&source=dotabod&image=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F117842146&game=dota2
+```

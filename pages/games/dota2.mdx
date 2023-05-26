@@ -1,0 +1,31 @@
+---
+title: Dota 2
+---
+
+# Dota 2
+
+...
+
+## Overview
+
+| Field      | Type   | Description                                                                |
+| ---------- | ------ | -------------------------------------------------------------------------- |
+| mmr        | number | Player's current mmr                                                       |
+| confidence | number | Player's mmr confidence level                                              |
+| gameMode   | string | The game mode played, e.g. "NONE", "GameMode_AllPick", or "GameMode_Turbo" |
+| lobbyType  | string | The lobby type, e.g. "DOTA_lobby_type_name_custom_lobby"                   |
+| gameState  | string | Either "playing", "idle" or "spectating"                                   |
+| players    | array  | An array of player objects                                                 |
+
+## players[]
+
+| Field       | Type   | Description                                                               |
+| ----------- | ------ | ------------------------------------------------------------------------- |
+| steamId     | string | 64-bit Steam ID                                                           |
+| accountId   | string | 32-bit account ID, also known as friend ID                                |
+| name        | string | The player's name                                                         |
+| hero        | string | The NPC short name of the player, e.g. legion_commander                   |
+| team        | number | The player's team, i.e. 2 for radiant and 3 for dire                      |
+| role        | number | Role defined for the player. Possible values: 0, 1, 2, 4, 8, 16, or other |
+| teamSlot    | number | A value between 0 and 4                                                   |
+| playerIndex | number | A value between 0 and 9 in standard games                                 |
